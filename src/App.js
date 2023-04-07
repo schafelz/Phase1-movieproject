@@ -6,6 +6,7 @@ import MoviePlot from "./MovieQuiz";
 import Contact from "./Contact";
 import Success from "./Success";
 import MovieDatabase from "./MovieDatabase";
+import AboutUs from "./AboutUs";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <Route path="/MovieDatabase" element={<MovieDatabase />} />
         <Route path="/MoviePlot" element={<MoviePlot />} />
         <Route path="/Contact" element={<Contact />} />
+        <Route path="/AboutUs" element={<AboutUs />} />
         <Route
           path="/Contact/Success/:name/:email/:concern"
           element={<Success />}

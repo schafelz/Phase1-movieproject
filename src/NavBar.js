@@ -10,7 +10,7 @@ function Navbar() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/MovieDatabase">Movie-Sreach</Link>
+            <Link to="/MovieDatabase">Movie-SearchSearch</Link>
           </li>
           <li>
             <Link to="/">Random-Movie</Link>
@@ -19,7 +19,7 @@ function Navbar() {
             <Link to="/MoviePlot">Movie-Quiz</Link>
           </li>
           <li>
-            <Link to="/contact">About us</Link>
+            <Link to="/AboutUs">About us</Link>
           </li>
           <li>
             <Link to="/contact">Contact</Link>
