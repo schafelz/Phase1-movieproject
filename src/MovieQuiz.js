@@ -61,6 +61,10 @@ function MoviePlot() {
     getMovieTitle();
     getPlot();
   };
+  const refresh = () => {
+    getMovieTitle();
+    getPlot();
+  };
 
   useEffect(() => {
     getPlot();
@@ -69,13 +73,18 @@ function MoviePlot() {
 
   return (
     <div>
-      <h1>Movie Plot</h1>
+      <div style={{ textAlign: "center", margin: "20px" }}>
+        <h1>Welcome to the Movie Quiz!</h1>
+        <p>
+          Test your movie knowledge by guessing the plot of various movies. Each
+          correct answer earns you a point, while an incorrect answer resets
+          your score. Good luck!
+        </p>
+      </div>
       {moviePlot ? (
         <div>
           {movieTitle && (
-            <h2>
-              Movie IMDb ID: {imdbId} {movieTitle}
-            </h2>
+            <h2>{/* Movie IMDb ID: {imdbId} {movieTitle} CheatCode */}</h2>
           )}
           <h3>Plot:</h3>
           <p>{moviePlot}</p>
@@ -83,7 +92,7 @@ function MoviePlot() {
       ) : (
         <p>Loading...</p>
       )}
-      <button onClick={getPlot}>Refresh</button>
+      
       <div>
         <input
           type="text"
@@ -95,6 +104,7 @@ function MoviePlot() {
           {result} <br />
           Score: {counter}
         </div>
+        <button onClick={refresh}>Refresh</button>
       </div>
     </div>
   );
