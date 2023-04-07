@@ -10,13 +10,16 @@ function Navbar() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/">Movie-Sreach</Link>
+            <Link to="/MovieDatabase">Movie-Sreach</Link>
           </li>
           <li>
             <Link to="/">Random-Movie</Link>
           </li>
           <li>
             <Link to="/MoviePlot">Movie-Quiz</Link>
+          </li>
+          <li>
+            <Link to="/contact">About us</Link>
           </li>
           <li>
             <Link to="/contact">Contact</Link>
