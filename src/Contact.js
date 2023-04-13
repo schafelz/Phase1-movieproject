@@ -1,81 +1,72 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
-function Contact() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [concern, setConcern] = useState("");
-  const navigate = useNavigate();
+function ContactForm() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [concern, setConcern] = useState('');
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    console.log("Form submitted", { name, email, phone });
-    setName("");
-    setEmail("");
-    setPhone("");
-    navigate(`/Contact/Success/${name}/${email}/${concern}`);
+    // Handle form submission logic here
   };
 
   return (
     <div>
-      <h1>Contact Form</h1>
-      <h3>Welcome to our Contact page</h3>
+      <h1>Welcome to our Contact page</h1>
+      <div>
       <p>
         Please feel free to leave your details and concerns below. We value your
         feedback and will get back to you as soon as possible.
       </p>
-      <form onSubmit={onSubmitHandler}>
-        <div>
-          <label>
-            Name:
-            <input
+      </div>
+      <div style={{ maxWidth: '500px', margin: '0 auto' ,border:"1px solid black"}}>
+        <Form onSubmit={onSubmitHandler}>
+          <Form.Group controlId="formBasicName">
+            <Form.Label>Name:</Form.Label>
+            <Form.Control
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
             />
-          </label>
-        </div>
-        <div>
-          <label>
-            Email:
-            <input
+          </Form.Group>
+          <Form.Group controlId="formBasicEmail">
+            <Form.Label>Email:</Form.Label>
+            <Form.Control
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
             />
-          </label>
-        </div>
-        <div>
-          <label>
-            Phone:
-            <input
+          </Form.Group>
+          <Form.Group controlId="formBasicPhone">
+            <Form.Label>Phone:</Form.Label>
+            <Form.Control
               type="tel"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               required
             />
-          </label>
-        </div>
-        <div>
-          <label>
-            Concerns:
-            <textarea
+          </Form.Group>
+          <Form.Group controlId="formBasicConcerns">
+            <Form.Label>Concerns:</Form.Label>
+            <Form.Control
+              as="textarea"
               value={concern}
               onChange={(e) => setConcern(e.target.value)}
               required
             />
-          </label>
-        </div>
-
-        <div>
-          <button type="submit">Submit</button>
-        </div>
-      </form>
+          </Form.Group>
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        </Form>
+      </div>
     </div>
   );
 }
 
-export default Contact;
+export default ContactForm;
